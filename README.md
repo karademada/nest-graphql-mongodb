@@ -32,6 +32,19 @@
 $ pnpm install
 ```
 
+## run docker
+
+```bash
+# run docker
+$ docker compose up -d
+# run docker with build
+$ docker compose up -d --build
+```
+
+## run graphql playground
+
+- go to `http://localhost:3000/graphql` in your browser.
+
 ## Compile and run the project
 
 ```bash
