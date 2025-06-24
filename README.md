@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Run a [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository, and building a GraphQL API with [Typescript and GraphQL](https://docs.nestjs.com/graphql/quick-start).
 
 ## Project setup
 
