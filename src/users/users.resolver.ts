@@ -12,27 +12,27 @@ export class UsersResolver {
   constructor(private readonly userService: UsersService) {}
 
   @Query(() => User, { name: 'user', nullable: true })
-  getUser(@Args() getUserArgs: GetUserArgs): User {
-    return this.userService.getUser(getUserArgs);
+  async getUser(@Args() getUserArgs: GetUserArgs): Promise<User> {
+    return await this.userService.getUser(getUserArgs);
   }
   @Query(() => [User], { name: 'users', nullable: 'items' })
-  getUsers(@Args() getUsersArgs: GetUsersArgs): User[] {
-    return this.userService.getUsers(getUsersArgs);
+  async getUsers(@Args() getUsersArgs: GetUsersArgs): Promise<User[]> {
+    return await this.userService.getUsers(getUsersArgs);
   }
 
   // Mutation methods can be added here as needed
   @Mutation(() => User)
-  createUser(@Args('createUserData') createUserData: CreateUserInput): User {
-    return this.userService.createUser(createUserData);
+  async createUser(@Args('createUserData') createUserData: CreateUserInput): Promise<User> {
+    return await this.userService.createUser(createUserData);
   }
 
   @Mutation(() => User)
-  updateUser(@Args('updateUserData') updateUserData: UpdateUserInput): User {
-    return this.userService.updateUser(updateUserData);
+  async updateUser(@Args('updateUserData') updateUserData: UpdateUserInput): Promise<User> {
+    return await this.userService.updateUser(updateUserData);
   }
 
   @Mutation(() => User)
-  deleteUser(@Args('deleteUserData') deleteUserData: DeleteUserInput): User {
-    return this.userService.deleteUser(deleteUserData);
+  async deleteUser(@Args('deleteUserData') deleteUserData: DeleteUserInput): Promise<User> {
+    return await this.userService.deleteUser(deleteUserData);
   }
 }
